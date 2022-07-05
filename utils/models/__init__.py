@@ -1,2 +1,2 @@
-from countries import Country
-from cities import City
+from .cities import City
+from .countries import Country

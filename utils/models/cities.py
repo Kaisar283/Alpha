@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from countries import Country
+from .countries import Country
 
 
 class City(models.Model):

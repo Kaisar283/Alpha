@@ -1,1 +1,1 @@
-from user_roles import CustomUserRolesChoices
+from .user_roles import CustomUserRolesChoices

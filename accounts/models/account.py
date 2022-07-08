@@ -12,17 +12,16 @@ class CustomUserAccount(AbstractBaseUser, PermissionsMixin):
     date_of_birth = models.DateField(verbose_name=_('Date of birth'), blank=True, null=True)
     start_date = models.DateTimeField(default=timezone.now)
     is_staff = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
     user_role = models.CharField(
         verbose_name=_('User roles'),
         max_length=20,
         choices=CustomUserRolesChoices.choices,
         default=CustomUserRolesChoices.USER.value
     )
-
+    objects = AccountManager()
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['user_name']
-    objects = AccountManager()
 
     class Meta:
         verbose_name = _('User account')

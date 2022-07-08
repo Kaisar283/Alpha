@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class AccountManager(BaseUserManager):
-    def create_account(self, email, user_name, data_of_birth, password, **extra_fields):
+    def create_account(self, email, password, **extra_fields):
         """
                 Creates and saves a User with the given email, name,  date of
                 birth and password.
@@ -11,7 +11,7 @@ class AccountManager(BaseUserManager):
         if not email:
             raise ValueError(_("You must provide an email address"))
         email = self.normalize_email(email)
-        account = self.model(email=email, user_name=user_name, data_of_birth=data_of_birth, **extra_fields)
+        account = self.model(email=email, **extra_fields)
         if password is None:
             raise ValueError(_("ERROR: The username must have a password"))
         else:
@@ -34,4 +34,4 @@ class AccountManager(BaseUserManager):
             raise ValueError('Superuser must be assigned to is_staff=True')
         if extra_field.get('is_superuser') is not True:
             raise ValueError('Superuser must be assigned to is_superuser=True')
-        return self._create_superuser(email, password, **extra_field)
+        return self.create_account(email, password, **extra_field)

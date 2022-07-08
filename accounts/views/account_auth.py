@@ -24,6 +24,8 @@ class AccountAuthViewSet(viewsets.GenericViewSet):
         permissions_classes = self.permission_classes
         if self.action == "logout":
             permissions_classes = [IsAuthenticated, ]
+        elif self.action == "login":
+            permissions_classes = [AllowAny, ]
         return [permission() for permission in permissions_classes]
 
     @action(methods=['post'], detail=False, url_path='sign_up')
@@ -37,7 +39,6 @@ class AccountAuthViewSet(viewsets.GenericViewSet):
     def login(self, request, *args, **kwargs):
         seializer = self.get_serializer(data=request.data)
         seializer.is_valid(raise_exception=True)
-
         account, token = auth_custom_user_account(
             seializer.validated_data.get('email'),
             seializer.validated_data.get('password')

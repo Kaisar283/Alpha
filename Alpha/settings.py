@@ -14,6 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 import accounts.apps
+import product.apps
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -41,9 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # installed apps
     "rest_framework",
+    'django_filters',
     'rest_framework.authtoken',
+    # 'django.contrib.staticfiles',  # required for serving swagger ui's css/js files
+    'drf_yasg',
     "utils",
     "accounts.apps.AccountsConfig",
+    "product.apps.ProductConfig",
 ]
 
 MIDDLEWARE = [
@@ -135,8 +140,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny', ],
     'DEFAULT_AUTHENTICATION_CLASSES': ('Alpha.auth.CustomAuthToken', ),
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
-    # 'USER_DETAILS_SERIALIZER': 'users.serializers.UserModelSerializer',
-    # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'USER_DETAILS_SERIALIZER': 'users.serializers.UserModelSerializer',
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
 
     # "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     # "PAGE_SIZE": 15,

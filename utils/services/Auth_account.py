@@ -22,4 +22,11 @@ def delete_tokens(account: CustomUserAccount, token: str, all:bool):
         else:
             AccountToken.objects.filter(account=account, key=token).delete()
     except:
+<<<<<<< HEAD
         raise ValidationError("ERROR: Token not found!")
+=======
+        raise ValidationError("ERROR: Token not found!")
+
+
+
+>>>>>>> main

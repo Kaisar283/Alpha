@@ -1,4 +1,5 @@
 from django.contrib import admin
+<<<<<<< HEAD
 from django.urls import path, include, re_path
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -26,3 +27,11 @@ urlpatterns = [
     path('account/', include('accounts.urls')),
     path('product/', include('product.urls')),
 ]
+=======
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('account/', include('accounts.urls'))
+]
+>>>>>>> main

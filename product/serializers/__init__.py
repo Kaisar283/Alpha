@@ -1,1 +1,2 @@
 from .Order_serializer import OrderSerializer, OrderListSerializer, OrderUpdateSerializer
+from .Product_serializer import ProductSerializer

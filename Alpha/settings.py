@@ -42,14 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # installed apps
     "rest_framework",
-<<<<<<< HEAD
     'django_filters',
     'rest_framework.authtoken',
     # 'django.contrib.staticfiles',  # required for serving swagger ui's css/js files
     'drf_yasg',
-=======
-    'rest_framework.authtoken',
->>>>>>> main
     "utils",
     "accounts.apps.AccountsConfig",
     "product.apps.ProductConfig",
@@ -139,17 +135,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.CustomUserAccount'
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny', ],
-    'DEFAULT_AUTHENTICATION_CLASSES': ('Alpha.auth.CustomAuthToken', ),
-    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
-    # 'USER_DETAILS_SERIALIZER': 'users.serializers.UserModelSerializer',
-    # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
-
-    # "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
-    # "PAGE_SIZE": 15,
-}
-
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny', ],
@@ -158,7 +143,7 @@ REST_FRAMEWORK = {
     'USER_DETAILS_SERIALIZER': 'users.serializers.UserModelSerializer',
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
 
-    # "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
-    # "PAGE_SIZE": 15,
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 50,
 }
 

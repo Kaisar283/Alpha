@@ -6,12 +6,16 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from product.serializers import OrderSerializer, OrderListSerializer, OrderUpdateSerializer
 from product.models import Orders
+from django_filters import rest_framework as filters
+from product.filterset import OrderFilterSet
 
 
 class CreateOrderViewSet(GenericViewSet):
     serializer_class = OrderSerializer
     permission_classes = [IsAuthenticated, ]
     queryset = Orders.objects.all()
+    filter_backends = (filters.DjangoFilterBackend, )
+    filterset_class = OrderFilterSet
 
     def get_serializer_class(self):
         serializer_class = self.serializer_class

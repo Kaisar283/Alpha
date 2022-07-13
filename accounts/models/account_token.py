@@ -23,8 +23,4 @@ class AccountToken(models.Model):
         return binascii.hexlify(os.urandom(50)).decode()
 
     def __str__(self):
-<<<<<<< HEAD
         return f"{self.account.email} - {self.key}"
-=======
-        return f"{self.account.email} - {self.key}"
->>>>>>> main

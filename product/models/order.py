@@ -18,4 +18,5 @@ class Orders(models.Model):
         verbose_name_plural = _('Orders')
 
     def __str__(self):
+
         return f"{self.id} | {self.product} - {self.owner}"

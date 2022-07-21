@@ -32,6 +32,7 @@ class AccountAuthViewSet(viewsets.GenericViewSet):
     def sign_up(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+        serializer.verify_email()
         serializer.save()
         return Response(data=serializer.data, status=status.HTTP_201_CREATED)
 

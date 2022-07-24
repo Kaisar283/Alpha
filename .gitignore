@@ -1,2 +1,4 @@
-db.sqlite3
+env
 .idea
+app/db.sqlite3
+app/.idea

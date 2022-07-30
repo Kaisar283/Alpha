@@ -4,21 +4,21 @@
 <p>Этот учебный проект, сделан в процессе обучения Django.
 Все требуемые пакеты находиться в файле requirements.txt.</p>
 <p></p>
-<p>Вы можете запускат проект через Docker следующим командам:</p>
+<p>Вы можете запускать проект через Docker следующим командам:</p>
 
 ```
-docker-compose --build -d # запуск контейнеры в фоновым режиме
+docker-compose --build -d # запуск контейнеры в фоновом режиме
 ```
 
-<p>Проект работает через REST API, болгодаря SWAGGER вы можете познокомится со всеми API локально через ссылку: </p>
+<p>Проект работает через REST API, благодаря SWAGGER вы можете познакомиться со всеми API локально через ссылку: </p>
 
 ```
 http://127.0.0.1:8000/swagger/
 ```
 
-### Файловый структура
+### Файловая структура
 
-<p>Все файлы пректа находится в папке app</p>
+<p>Все файлы проекта находится в директории app</p>
 <a href="https://github.com/Kaisar283/Alpha/tree/Dj_RS/app/Alpha">Alpha</a><span> - Главый файл</span><br>
 <a href="https://github.com/Kaisar283/Alpha/tree/Dj_RS/app/accounts">accounts</a><span> - Приложение о пользователей</span><br>
 <a href="https://github.com/Kaisar283/Alpha/tree/Dj_RS/app/product">products</a><span> - Приложение о продуктах</span><br>
